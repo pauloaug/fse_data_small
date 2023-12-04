@@ -1,0 +1,51 @@
+<<<<<<< /mnt/batch/tasks/workitems/adfv2-General_1/job-1/d16d938a-0cde-4858-9b19-5a9eab00ddd9/wd/.temp/athenacommon/247d9dd8-5466-41cf-b67d-bf78705f009c.java
+/*
+ * Copyright (C) 2012-2019 52°North Initiative for Geospatial Open Source
+||||||| /mnt/batch/tasks/workitems/adfv2-General_1/job-1/d16d938a-0cde-4858-9b19-5a9eab00ddd9/wd/.temp/athenacommon/7e4b5842-cd06-4b58-8a85-7e366618a1af.java
+/**
+ * Copyright (C) 2012-2019 52°North Initiative for Geospatial Open Source
+=======
+/**
+ * Copyright (C) 2012-2020 52°North Initiative for Geospatial Open Source
+>>>>>>> /mnt/batch/tasks/workitems/adfv2-General_1/job-1/d16d938a-0cde-4858-9b19-5a9eab00ddd9/wd/.temp/athenacommon/7154b878-84d3-4b93-b59f-5620150a128e.java
+ * Software GmbH
+ *
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License version 2 as published
+ * by the Free Software Foundation.
+ *
+ * If the program is linked with libraries which are licensed under one of
+ * the following licenses, the combination of the program with the linked
+ * library is not considered a "derivative work" of the program:
+ *
+ *     - Apache License, version 2.0
+ *     - Apache Software License, version 1.0
+ *     - GNU Lesser General Public License, version 3
+ *     - Mozilla Public License, versions 1.0, 1.1 and 2.0
+ *     - Common Development and Distribution License (CDDL), version 1.0
+ *
+ * Therefore the distribution of the program linked with libraries licensed
+ * under the aforementioned licenses, is permitted by the copyright holders
+ * if the distribution is compliant with both the GNU General Public
+ * License version 2 and the aforementioned licenses.
+ *
+ * This program is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
+ * Public License for more details.
+ */
+package org.n52.sos.netcdf.data.dataset;
+
+/**
+ * Interface to identify static location datasets
+ *
+ * @author <a href="mailto:shane@axiomdatascience.com">Shane StClair</a>
+ * @author <a href="mailto:c.hollmann@52north.org">Carsten Hollmann</a>
+ * @since 4.4.0
+ *
+ */
+public interface StaticLocationDataset {
+    Double getLng();
+
+    Double getLat();
+}

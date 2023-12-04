@@ -1,0 +1,45 @@
+{
+    "fname": "coding/netcdf/api/src/main/java/org/n52/sos/netcdf/data/dataset/StaticLocationDataset.java",
+    "repo": "https://github.com/52North/SOS",
+    "commitHash": "3f81988043ff18d4bd47b0b9f70f561884c1c03d",
+    "uninteresting": {
+        "file_same_as_a": false,
+        "file_same_as_b": false,
+        "file_same_as_base": false,
+        "file_same_as_theirs": false,
+        "file_same_as_ours": false,
+        "file_base_empty": false,
+        "file_resolved_empty": false
+    },
+    "minified": false,
+    "conflicting_chunks": [
+        {
+            "sizes": {
+                "lines": {
+                    "a": 2,
+                    "b": 2,
+                    "base": 2
+                },
+                "chars": {
+                    "a": 77,
+                    "b": 79,
+                    "base": 78
+                }
+            },
+            "a_contents": "/*\n * Copyright (C) 2012-2019 52\u00b0North Initiative for Geospatial Open Source\n",
+            "b_contents": "\n/**\n * Copyright (C) 2012-2020 52\u00b0North Initiative for Geospatial Open Source\n",
+            "base_contents": "/**\n * Copyright (C) 2012-2019 52\u00b0North Initiative for Geospatial Open Source\n",
+            "num_conflicts_in_file": 1,
+            "found_res_region": true,
+            "res_region": "/*\n * Copyright (C) 2012-2020 52\u00b0North Initiative for Geospatial Open Source\n",
+            "res_start_pos": 0,
+            "res_end_pos": 77,
+            "lookback": "<START\\>",
+            "lookahead": " * Software GmbH\n *\n * This program is free software; you can redistribute it and/or modify it\n * under the terms of the GNU General Public License version 2 as published\n * by the Free Software Foundation.\n *\n * If the program is linked with libraries which are licensed under one of\n * the following licenses, the combination of the program with the linked\n * library is not considered a \"derivative work\" of the program:\n *\n *     - Apache License, version 2.0\n *     - Apache Software License, version 1.0\n *     - GNU Lesser General Public License, version 3\n *     - Mozilla Public License, versions 1.0, 1.1 and 2.0\n *     - Common Development and Distribution License (CDDL), version 1.0\n *\n * Therefore the distribution of the program linked with libraries licensed\n * under the aforementioned licenses, is permitted by the copyright holders\n * if the distribution is compliant with both the GNU General Public\n * License version 2 and the aforementioned licenses.\n *\n * This program is distributed in the hope that it will be useful, but\n * WITHOUT ANY WARRANTY; without even the implied warranty of\n * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General\n * Public License for more details.\n */\npackage org.n52.sos.netcdf.data.dataset;\n\n/**\n * Interface to identify static location datasets\n *\n * @author <a href=\"mailto:shane@axiomdatascience.com\">Shane StClair</a>\n * @author <a href=\"mailto:c.hollmann@52north.org\">Carsten Hollmann</a>\n * @since 4.4.0\n *\n */\npublic interface StaticLocationDataset {\n    Double getLng();\n\n    Double getLat();\n}<END\\>",
+            "label": "OTHER",
+            "in_vocab_lines": true,
+            "in_vocab_words": true
+        }
+    ],
+    "metadata_corrupted": false
+}

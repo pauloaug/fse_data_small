@@ -1,0 +1,45 @@
+{
+    "fname": "hibernate/dao/src/main/java/org/n52/sos/ds/hibernate/admin/HibernateProcedureFormatDAO.java",
+    "repo": "https://github.com/52North/SOS",
+    "commitHash": "ea91e75835472cfad6881543596e8d731a038a30",
+    "uninteresting": {
+        "file_same_as_a": false,
+        "file_same_as_b": false,
+        "file_same_as_base": false,
+        "file_same_as_theirs": false,
+        "file_same_as_ours": false,
+        "file_base_empty": false,
+        "file_resolved_empty": false
+    },
+    "minified": false,
+    "conflicting_chunks": [
+        {
+            "sizes": {
+                "lines": {
+                    "a": 2,
+                    "b": 1,
+                    "base": 1
+                },
+                "chars": {
+                    "a": 98,
+                    "b": 58,
+                    "base": 51
+                }
+            },
+            "a_contents": "\nimport org.n52.iceland.ds.ConnectionProvider;\nimport org.n52.iceland.ogc.ows.OwsExceptionReport;\n",
+            "b_contents": "\nimport org.n52.iceland.exception.ows.OwsExceptionReport;\n",
+            "base_contents": "import org.n52.iceland.ogc.ows.OwsExceptionReport;\n",
+            "num_conflicts_in_file": 1,
+            "found_res_region": true,
+            "res_region": "\nimport org.n52.iceland.ds.ConnectionProvider;\nimport org.n52.iceland.exception.ows.OwsExceptionReport;\n",
+            "res_start_pos": 1427,
+            "res_end_pos": 1531,
+            "lookback": "<START\\>/**\n * Copyright (C) 2012-2015 52\u00b0North Initiative for Geospatial Open Source\n * Software GmbH\n *\n * This program is free software; you can redistribute it and/or modify it\n * under the terms of the GNU General Public License version 2 as published\n * by the Free Software Foundation.\n *\n * If the program is linked with libraries which are licensed under one of\n * the following licenses, the combination of the program with the linked\n * library is not considered a \"derivative work\" of the program:\n *\n *     - Apache License, version 2.0\n *     - Apache Software License, version 1.0\n *     - GNU Lesser General Public License, version 3\n *     - Mozilla Public License, versions 1.0, 1.1 and 2.0\n *     - Common Development and Distribution License (CDDL), version 1.0\n *\n * Therefore the distribution of the program linked with libraries licensed\n * under the aforementioned licenses, is permitted by the copyright holders\n * if the distribution is compliant with both the GNU General Public\n * License version 2 and the aforementioned licenses.\n *\n * This program is distributed in the hope that it will be useful, but\n * WITHOUT ANY WARRANTY; without even the implied warranty of\n * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General\n * Public License for more details.\n */\npackage org.n52.sos.ds.hibernate.admin;\n\nimport java.util.Map;\n\nimport javax.inject.Inject;\n\nimport org.hibernate.Session;\n",
+            "lookahead": "import org.n52.sos.ds.ProcedureFormatDAO;\nimport org.n52.sos.ds.hibernate.HibernateSessionHolder;\nimport org.n52.sos.ds.hibernate.dao.ProcedureDAO;\n\n/**\n * @author <a href=\"mailto:shane@axiomalaska.com\">Shane StClair</a>\n */\npublic class HibernateProcedureFormatDAO implements ProcedureFormatDAO {\n\n    private HibernateSessionHolder sessionHolder;\n\n    @Inject\n    public void setConnectionProvider(ConnectionProvider connectionProvider) {\n        this.sessionHolder = new HibernateSessionHolder(connectionProvider);\n    }\n\n    @Override\n    public Map<String, String> getProcedureFormatMap() throws OwsExceptionReport {\n        Session session = null;\n        Map<String,String> procedureFormatMap = null;\n        try {\n            session = this.sessionHolder.getSession();\n            procedureFormatMap = new ProcedureDAO().getProcedureFormatMap(session);\n        } finally {\n            this.sessionHolder.returnSession(session);\n        }\n        return procedureFormatMap;\n    }\n}<END\\>",
+            "label": "REM-BASE-AB",
+            "in_vocab_lines": true,
+            "in_vocab_words": true
+        }
+    ],
+    "metadata_corrupted": false
+}

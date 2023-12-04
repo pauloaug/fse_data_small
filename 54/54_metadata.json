@@ -1,0 +1,386 @@
+{
+    "fname": "hibernate/dao/src/main/java/org/n52/sos/ds/hibernate/values/AbstractHibernateStreamingValue.java",
+    "repo": "https://github.com/52North/SOS",
+    "commitHash": "5a83b10e2b98c2d4c9733c852f7134727ead113a",
+    "uninteresting": {
+        "file_same_as_a": false,
+        "file_same_as_b": false,
+        "file_same_as_base": false,
+        "file_same_as_theirs": false,
+        "file_same_as_ours": false,
+        "file_base_empty": false,
+        "file_resolved_empty": false
+    },
+    "minified": false,
+    "conflicting_chunks": [
+        {
+            "sizes": {
+                "lines": {
+                    "a": 2,
+                    "b": 1,
+                    "base": 1
+                },
+                "chars": {
+                    "a": 88,
+                    "b": 36,
+                    "base": 0
+                }
+            },
+            "a_contents": "\nimport org.n52.iceland.ogc.ows.Extensions;\nimport org.n52.iceland.util.DateTimeHelper;\n",
+            "b_contents": "\nimport org.joda.time.DateTimeZone;\n",
+            "base_contents": "",
+            "num_conflicts_in_file": 14,
+            "found_res_region": true,
+            "res_region": "import org.joda.time.DateTimeZone;\nimport org.n52.iceland.ogc.ows.Extensions;\nimport org.n52.iceland.util.DateTimeHelper;\n",
+            "res_start_pos": 1572,
+            "res_end_pos": 1694,
+            "lookback": "<START\\>/**\n * Copyright (C) 2012-2015 52\u00b0North Initiative for Geospatial Open Source\n * Software GmbH\n *\n * This program is free software; you can redistribute it and/or modify it\n * under the terms of the GNU General Public License version 2 as published\n * by the Free Software Foundation.\n *\n * If the program is linked with libraries which are licensed under one of\n * the following licenses, the combination of the program with the linked\n * library is not considered a \"derivative work\" of the program:\n *\n *     - Apache License, version 2.0\n *     - Apache Software License, version 1.0\n *     - GNU Lesser General Public License, version 3\n *     - Mozilla Public License, versions 1.0, 1.1 and 2.0\n *     - Common Development and Distribution License (CDDL), version 1.0\n *\n * Therefore the distribution of the program linked with libraries licensed\n * under the aforementioned licenses, is permitted by the copyright holders\n * if the distribution is compliant with both the GNU General Public\n * License version 2 and the aforementioned licenses.\n *\n * This program is distributed in the hope that it will be useful, but\n * WITHOUT ANY WARRANTY; without even the implied warranty of\n * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General\n * Public License for more details.\n */\npackage org.n52.sos.ds.hibernate.values;\n\nimport java.util.Collection;\nimport java.util.Date;\nimport java.util.HashSet;\nimport java.util.Map;\nimport java.util.Set;\n\nimport org.hibernate.Session;\nimport org.hibernate.criterion.Criterion;\nimport org.joda.time.DateTime;\n",
+            "lookahead": "import org.n52.sos.ds.hibernate.HibernateSessionHolder;\n",
+            "label": "BA",
+            "in_vocab_lines": true,
+            "in_vocab_words": true
+        },
+        {
+            "sizes": {
+                "lines": {
+                    "a": 3,
+                    "b": 15,
+                    "base": 5
+                },
+                "chars": {
+                    "a": 200,
+                    "b": 948,
+                    "base": 283
+                }
+            },
+            "a_contents": "import org.n52.sos.ds.hibernate.entities.AbstractObservationTime;\nimport org.n52.sos.ds.hibernate.entities.interfaces.SweDataArrayValue;\nimport org.n52.sos.ds.hibernate.entities.values.AbstractValue;\n",
+            "b_contents": "\nimport org.n52.sos.ds.hibernate.entities.observation.AbstractTemporalReferencedObservation;\nimport org.n52.sos.ds.hibernate.entities.observation.BaseObservation;\nimport org.n52.sos.ds.hibernate.entities.observation.Observation;\nimport org.n52.sos.ds.hibernate.entities.observation.TemporalReferencedObservation;\nimport org.n52.sos.ds.hibernate.entities.observation.ValuedObservation;\nimport org.n52.sos.ds.hibernate.entities.observation.legacy.AbstractValuedLegacyObservation;\nimport org.n52.sos.ds.hibernate.entities.observation.legacy.valued.SweDataArrayValuedLegacyObservation;\nimport org.n52.sos.ds.hibernate.util.observation.ObservationValueCreator;\nimport org.n52.sos.ogc.gml.CodeWithAuthority;\nimport org.n52.sos.ogc.gml.ReferenceType;\nimport org.n52.sos.ogc.gml.time.Time;\nimport org.n52.sos.ogc.gml.time.TimeInstant;\nimport org.n52.sos.ogc.gml.time.TimePeriod;\nimport org.n52.sos.ogc.om.NamedValue;\nimport org.n52.sos.ogc.om.OmConstants;\n",
+            "base_contents": "import org.n52.sos.ds.hibernate.entities.AbstractObservationTime;\nimport org.n52.sos.ds.hibernate.entities.interfaces.SweDataArrayValue;\nimport org.n52.sos.ds.hibernate.entities.values.AbstractValue;\nimport org.n52.sos.ogc.gml.time.Time;\nimport org.n52.sos.ogc.gml.time.TimeInstant;\n",
+            "num_conflicts_in_file": 14,
+            "found_res_region": true,
+            "res_region": "import org.n52.sos.ds.hibernate.entities.observation.AbstractTemporalReferencedObservation;\nimport org.n52.sos.ds.hibernate.entities.observation.BaseObservation;\nimport org.n52.sos.ds.hibernate.entities.observation.Observation;\nimport org.n52.sos.ds.hibernate.entities.observation.TemporalReferencedObservation;\nimport org.n52.sos.ds.hibernate.entities.observation.ValuedObservation;\nimport org.n52.sos.ds.hibernate.entities.observation.legacy.AbstractValuedLegacyObservation;\nimport org.n52.sos.ds.hibernate.entities.observation.legacy.valued.SweDataArrayValuedLegacyObservation;\nimport org.n52.sos.ds.hibernate.util.observation.ObservationValueCreator;\nimport org.n52.sos.ogc.gml.ReferenceType;\nimport org.n52.sos.ogc.om.NamedValue;\n",
+            "res_start_pos": 1750,
+            "res_end_pos": 2485,
+            "lookback": "import org.n52.sos.ds.hibernate.HibernateSessionHolder;\n",
+            "lookahead": "import org.n52.sos.ogc.om.OmObservation;\nimport org.n52.sos.ogc.om.SingleObservationValue;\nimport org.n52.sos.ogc.om.StreamingValue;\n",
+            "label": "OTHER",
+            "in_vocab_lines": true,
+            "in_vocab_words": true
+        },
+        {
+            "sizes": {
+                "lines": {
+                    "a": 1,
+                    "b": 4,
+                    "base": 2
+                },
+                "chars": {
+                    "a": 0,
+                    "b": 173,
+                    "base": 91
+                }
+            },
+            "a_contents": "",
+            "b_contents": "\nimport org.n52.sos.ogc.om.TimeValuePair;\nimport org.n52.sos.ogc.om.values.Value;\nimport org.n52.sos.ogc.ows.OwsExceptionReport;\nimport org.n52.sos.ogc.swes.SwesExtensions;\n",
+            "base_contents": "import org.n52.sos.ogc.ows.OwsExceptionReport;\nimport org.n52.sos.ogc.swes.SwesExtensions;\n",
+            "num_conflicts_in_file": 14,
+            "found_res_region": true,
+            "res_region": "import org.n52.sos.ogc.om.TimeValuePair;\nimport org.n52.sos.ogc.om.values.Value;\n",
+            "res_start_pos": 2618,
+            "res_end_pos": 2699,
+            "lookback": "import org.n52.sos.ogc.om.OmObservation;\nimport org.n52.sos.ogc.om.SingleObservationValue;\nimport org.n52.sos.ogc.om.StreamingValue;\n",
+            "lookahead": "import org.n52.sos.request.GetObservationRequest;\n",
+            "label": "REM-BASE-B",
+            "in_vocab_lines": true,
+            "in_vocab_words": true
+        },
+        {
+            "sizes": {
+                "lines": {
+                    "a": 1,
+                    "b": 2,
+                    "base": 1
+                },
+                "chars": {
+                    "a": 0,
+                    "b": 82,
+                    "base": 40
+                }
+            },
+            "a_contents": "",
+            "b_contents": "\nimport org.n52.sos.util.DateTimeHelper;\nimport org.n52.sos.util.GeometryHandler;\n",
+            "base_contents": "import org.n52.sos.util.DateTimeHelper;\n",
+            "num_conflicts_in_file": 14,
+            "found_res_region": true,
+            "res_region": "import org.n52.sos.util.GeometryHandler;\n",
+            "res_start_pos": 2749,
+            "res_end_pos": 2790,
+            "lookback": "import org.n52.sos.request.GetObservationRequest;\n",
+            "lookahead": "import org.n52.sos.util.GmlHelper;\n",
+            "label": "REM-BASE-B",
+            "in_vocab_lines": true,
+            "in_vocab_words": true
+        },
+        {
+            "sizes": {
+                "lines": {
+                    "a": 1,
+                    "b": 1,
+                    "base": 1
+                },
+                "chars": {
+                    "a": 1,
+                    "b": 35,
+                    "base": 0
+                }
+            },
+            "a_contents": "\n",
+            "b_contents": "\nimport org.n52.sos.util.OMHelper;\n",
+            "base_contents": "",
+            "num_conflicts_in_file": 14,
+            "found_res_region": true,
+            "res_region": "import org.n52.sos.util.OMHelper;\n",
+            "res_start_pos": 2825,
+            "res_end_pos": 2859,
+            "lookback": "import org.n52.sos.util.GmlHelper;\n",
+            "lookahead": "import org.slf4j.Logger;\nimport org.slf4j.LoggerFactory;\n\nimport org.n52.iceland.ds.ConnectionProvider;\nimport org.n52.iceland.exception.ows.OwsExceptionReport;\nimport org.n52.iceland.ogc.gml.time.Time;\nimport org.n52.iceland.ogc.gml.time.TimeInstant;\n\nimport com.google.common.collect.Maps;\nimport com.vividsolutions.jts.geom.Geometry;\n\n/**\n * Abstract class for Hibernate streaming values\n",
+            "label": "B",
+            "in_vocab_lines": true,
+            "in_vocab_words": true
+        },
+        {
+            "sizes": {
+                "lines": {
+                    "a": 2,
+                    "b": 2,
+                    "base": 2
+                },
+                "chars": {
+                    "a": 75,
+                    "b": 57,
+                    "base": 57
+                }
+            },
+            "a_contents": " *\n * @author <a href=\"mailto:c.hollmann@52north.org\">Carsten Hollmann</a>\n",
+            "b_contents": "\n *\n * @author Carsten Hollmann <c.hollmann@52north.org>\n",
+            "base_contents": " * \n * @author Carsten Hollmann <c.hollmann@52north.org>\n",
+            "num_conflicts_in_file": 14,
+            "found_res_region": true,
+            "res_region": " *\n * @author <a href=\"mailto:c.hollmann@52north.org\">Carsten Hollmann</a>\n",
+            "res_start_pos": 3391,
+            "res_end_pos": 3466,
+            "lookback": "import org.slf4j.Logger;\nimport org.slf4j.LoggerFactory;\n\nimport org.n52.iceland.ds.ConnectionProvider;\nimport org.n52.iceland.exception.ows.OwsExceptionReport;\nimport org.n52.iceland.ogc.gml.time.Time;\nimport org.n52.iceland.ogc.gml.time.TimeInstant;\n\nimport com.google.common.collect.Maps;\nimport com.vividsolutions.jts.geom.Geometry;\n\n/**\n * Abstract class for Hibernate streaming values\n",
+            "lookahead": " * @since 4.1.0\n *\n */\npublic abstract class AbstractHibernateStreamingValue extends StreamingValue<AbstractValuedLegacyObservation<?>> {\n\n    private static final Logger LOGGER = LoggerFactory.getLogger(AbstractHibernateStreamingValue.class);\n\n    private static final long serialVersionUID = -8355955808723620476L;\n\n    protected final HibernateSessionHolder sessionHolder;\n\n    protected Session session;\n\n    protected final GetObservationRequest request;\n\n    protected Criterion temporalFilterCriterion;\n\n    /**\n     * constructor\n     *\n     * @param request\n     *            {@link GetObservationRequest}\n     * @param connectionProvider the connection provider\n     */\n    public AbstractHibernateStreamingValue(ConnectionProvider connectionProvider, GetObservationRequest request) {\n        this.request = request;\n        this.sessionHolder = new HibernateSessionHolder(connectionProvider);\n    }\n\n    @Override\n    public Collection<OmObservation> mergeObservation() throws OwsExceptionReport {\n\n        Map<String, OmObservation> observations = Maps.newHashMap();\n        while (hasNextValue()) {\n            AbstractValuedLegacyObservation<?> nextEntity = nextEntity();\n            boolean mergableObservationValue = checkForMergability(nextEntity);\n            OmObservation observation = null;\n            if (observations.containsKey(nextEntity.getDiscriminator()) && mergableObservationValue) {\n                observation = observations.get(nextEntity.getDiscriminator());\n            } else {\n                observation = observationTemplate.cloneTemplate();\n                addSpecificValuesToObservation(observation, nextEntity, request.getExtensions());\n                if (!mergableObservationValue && nextEntity.getDiscriminator() == null) {\n                    observations.put(Long.toString(nextEntity.getObservationId()), observation);\n                } else {\n                    observations.put(nextEntity.getDiscriminator(), observation);\n                }\n            }\n            nextEntity.mergeValueToObservation(observation, getResponseFormat());\n            sessionHolder.getSession().evict(nextEntity);\n        }\n        return observations.values();\n    }\n\n",
+            "label": "A",
+            "in_vocab_lines": true,
+            "in_vocab_words": true
+        },
+        {
+            "sizes": {
+                "lines": {
+                    "a": 2,
+                    "b": 2,
+                    "base": 2
+                },
+                "chars": {
+                    "a": 129,
+                    "b": 167,
+                    "base": 127
+                }
+            },
+            "a_contents": "\n\n    private boolean checkForMergability(AbstractValue nextEntity) {\n        return !(nextEntity instanceof SweDataArrayValue);\n",
+            "b_contents": "\n    private boolean checkForMergability(AbstractValuedLegacyObservation<?> nextEntity) {\n        return !(nextEntity instanceof SweDataArrayValuedLegacyObservation);\n",
+            "base_contents": "    private boolean checkForMergability(AbstractValue nextEntity) {\n        return !(nextEntity instanceof SweDataArrayValue);\n",
+            "num_conflicts_in_file": 14,
+            "found_res_region": false,
+            "res_region": null,
+            "res_start_pos": 5667,
+            "res_end_pos": -1
+        },
+        {
+            "sizes": {
+                "lines": {
+                    "a": 1,
+                    "b": 2,
+                    "base": 2
+                },
+                "chars": {
+                    "a": 121,
+                    "b": 163,
+                    "base": 141
+                }
+            },
+            "a_contents": "    private void addSpecificValuesToObservation(OmObservation observation, AbstractValue value, Extensions extensions) {\n",
+            "b_contents": "\n    private void addSpecificValuesToObservation(OmObservation observation, AbstractValuedLegacyObservation<?> value,\n            SwesExtensions swesExtensions) {\n",
+            "base_contents": "    private void addSpecificValuesToObservation(OmObservation observation, AbstractValue value,\n            SwesExtensions swesExtensions) {\n",
+            "num_conflicts_in_file": 14,
+            "found_res_region": false,
+            "res_region": null,
+            "res_start_pos": -1,
+            "res_end_pos": -1
+        },
+        {
+            "sizes": {
+                "lines": {
+                    "a": 1,
+                    "b": 20,
+                    "base": 10
+                },
+                "chars": {
+                    "a": 0,
+                    "b": 534,
+                    "base": 228
+                }
+            },
+            "a_contents": "",
+            "b_contents": "\n     * constructor\n     *\n     * @param request\n     *            {@link GetObservationRequest}\n     */\n    public AbstractHibernateStreamingValue(GetObservationRequest request) {\n        this.request = request;\n    }\n\n    /**\n     * Set the observation template which contains all metadata\n     *\n     * @param observationTemplate\n     *            Observation template to set\n     */\n    public void setObservationTemplate(OmObservation observationTemplate) {\n        this.observationTemplate = observationTemplate;\n    }\n\n    /**\n",
+            "base_contents": "     * constructor\n     * \n     * @param request\n     *            {@link GetObservationRequest}\n     */\n    public AbstractHibernateStreamingValue(GetObservationRequest request) {\n        this.request = request;\n    }\n\n    /**\n",
+            "num_conflicts_in_file": 14,
+            "found_res_region": true,
+            "res_region": "     * Set the observation template which contains all metadata\n     *\n     * @param observationTemplate\n     *            Observation template to set\n     */\n    public void setObservationTemplate(OmObservation observationTemplate) {\n        this.observationTemplate = observationTemplate;\n    }\n\n    /**\n",
+            "res_start_pos": 6506,
+            "res_end_pos": 6812,
+            "lookback": "        boolean newSession = false;\n        try {\n            if (session == null) {\n                session = sessionHolder.getSession();\n                newSession = true;\n            }\n            value.addValueSpecificDataToObservation(observation, session, extensions);\n        } catch (OwsExceptionReport owse) {\n            LOGGER.error(\"Error while querying times\", owse);\n        } finally {\n            if (newSession) {\n                sessionHolder.returnSession(session);\n            }\n        }\n    }\n\n    /**\n",
+            "lookahead": "     * Set the temporal filter {@link Criterion}\n     *\n     * @param temporalFilterCriterion\n     *            Temporal filter {@link Criterion}\n     */\n    public void setTemporalFilterCriterion(Criterion temporalFilterCriterion) {\n        this.temporalFilterCriterion = temporalFilterCriterion;\n\n    }\n\n    /**\n",
+            "label": "OTHER",
+            "in_vocab_lines": true,
+            "in_vocab_words": true
+        },
+        {
+            "sizes": {
+                "lines": {
+                    "a": 2,
+                    "b": 48,
+                    "base": 2
+                },
+                "chars": {
+                    "a": 66,
+                    "b": 2445,
+                    "base": 67
+                }
+            },
+            "a_contents": "     * Get the observation ids from {@link AbstractValue}s\n     *\n",
+            "b_contents": "\n     * Create a {@link TimeValuePair} from {@link AbstractValuedLegacyObservation}\n     *\n     * @param abstractValue\n     *            {@link AbstractValuedLegacyObservation} to create {@link TimeValuePair} from\n     * @return resulting {@link TimeValuePair}\n     * @throws OwsExceptionReport\n     *             If an error occurs when getting the value\n     */\n    protected TimeValuePair createTimeValuePairFrom(ValuedObservation<?> abstractValue) throws OwsExceptionReport {\n        return new TimeValuePair(createPhenomenonTime(abstractValue), abstractValue.accept(new ObservationValueCreator()));\n    }\n\n    /**\n     * Add {@link AbstractValuedLegacyObservation} data to {@link OmObservation}\n     *\n     * @param observation\n     *            {@link OmObservation} to add data\n     * @param abstractValue\n     *            {@link AbstractValuedLegacyObservation} to get data from\n     * @throws OwsExceptionReport\n     *             If an error occurs when getting the value\n     */\n    @SuppressWarnings({ \"unchecked\", \"rawtypes\" })\n    protected void addValuesToObservation(OmObservation observation, ValuedObservation<?> abstractValue)\n            throws OwsExceptionReport {\n        observation.setObservationID(Long.toString(abstractValue.getObservationId()));\n        if (abstractValue.isSetIdentifier()) {\n            CodeWithAuthority identifier = new CodeWithAuthority(abstractValue.getIdentifier());\n            if (abstractValue.isSetCodespace()) {\n                identifier.setCodeSpace(abstractValue.getCodespace().getCodespace());\n            }\n            observation.setIdentifier(identifier);\n        }\n        if (abstractValue.isSetDescription()) {\n            observation.setDescription(abstractValue.getDescription());\n        }\n        Value<?> value = abstractValue.accept(new ObservationValueCreator());\n        if (!observation.getObservationConstellation().isSetObservationType()) {\n            observation.getObservationConstellation().setObservationType(OMHelper.getObservationTypeFor(value));\n        }\n        observation.setResultTime(createResutlTime(abstractValue.getResultTime()));\n        observation.setValidTime(createValidTime(abstractValue.getValidTimeStart(), abstractValue.getValidTimeEnd()));\n        observation.setValue(new SingleObservationValue(createPhenomenonTime(abstractValue), value));\n    }\n\n    /**\n     * Get the observation ids from {@link AbstractValuedLegacyObservation}s\n     *\n",
+            "base_contents": "     * Get the observation ids from {@link AbstractValue}s\n     * \n",
+            "num_conflicts_in_file": 14,
+            "found_res_region": true,
+            "res_region": "     * Create a {@link TimeValuePair} from {@link AbstractValuedLegacyObservation}\n     *\n     * @param abstractValue\n     *            {@link AbstractValuedLegacyObservation} to create {@link TimeValuePair} from\n     * @return resulting {@link TimeValuePair}\n     * @throws OwsExceptionReport\n     *             If an error occurs when getting the value\n     */\n    protected TimeValuePair createTimeValuePairFrom(ValuedObservation<?> abstractValue) throws OwsExceptionReport {\n        return new TimeValuePair(createPhenomenonTime(abstractValue), abstractValue.accept(new ObservationValueCreator()));\n    }\n\n    /**\n     * Add {@link AbstractValuedLegacyObservation} data to {@link OmObservation}\n     *\n     * @param observation\n     *            {@link OmObservation} to add data\n     * @param abstractValue\n     *            {@link AbstractValuedLegacyObservation} to get data from\n     * @throws OwsExceptionReport\n     *             If an error occurs when getting the value\n     */\n    @SuppressWarnings({ \"unchecked\", \"rawtypes\" })\n    protected void addValuesToObservation(OmObservation observation, ValuedObservation<?> abstractValue)\n            throws OwsExceptionReport {\n        observation.setObservationID(Long.toString(abstractValue.getObservationId()));\n        if (abstractValue.isSetIdentifier()) {\n            CodeWithAuthority identifier = new CodeWithAuthority(abstractValue.getIdentifier());\n            if (abstractValue.isSetCodespace()) {\n                identifier.setCodeSpace(abstractValue.getCodespace().getCodespace());\n            }\n            observation.setIdentifier(identifier);\n        }\n        if (abstractValue.isSetDescription()) {\n            observation.setDescription(abstractValue.getDescription());\n        }\n        Value<?> value = abstractValue.accept(new ObservationValueCreator());\n        if (!observation.getObservationConstellation().isSetObservationType()) {\n            observation.getObservationConstellation().setObservationType(OMHelper.getObservationTypeFor(value));\n        }\n        observation.setResultTime(createResutlTime(abstractValue.getResultTime()));\n        observation.setValidTime(createValidTime(abstractValue.getValidTimeStart(), abstractValue.getValidTimeEnd()));\n        observation.setValue(new SingleObservationValue(createPhenomenonTime(abstractValue), value));\n    }\n\n    /**\n     * Get the observation ids from {@link AbstractValuedLegacyObservation}s\n     *\n",
+            "res_start_pos": 7126,
+            "res_end_pos": 9570,
+            "lookback": "     * Set the temporal filter {@link Criterion}\n     *\n     * @param temporalFilterCriterion\n     *            Temporal filter {@link Criterion}\n     */\n    public void setTemporalFilterCriterion(Criterion temporalFilterCriterion) {\n        this.temporalFilterCriterion = temporalFilterCriterion;\n\n    }\n\n    /**\n",
+            "lookahead": "     * @param abstractValuesResult\n     *            {@link AbstractValuedLegacyObservation}s to get ids from\n     * @return Set with ids\n     */\n",
+            "label": "B",
+            "in_vocab_lines": true,
+            "in_vocab_words": true
+        },
+        {
+            "sizes": {
+                "lines": {
+                    "a": 3,
+                    "b": 3,
+                    "base": 3
+                },
+                "chars": {
+                    "a": 200,
+                    "b": 242,
+                    "base": 204
+                }
+            },
+            "a_contents": "    protected Set<Long> getObservationIds(Collection<AbstractValue> abstractValuesResult) {\n        Set<Long> ids = new HashSet<>();\n        for (AbstractValue abstractValue : abstractValuesResult) {\n",
+            "b_contents": "\n    protected Set<Long> getObservationIds(Collection<? extends BaseObservation> abstractValuesResult) {\n        Set<Long> ids = new HashSet<>(abstractValuesResult.size());\n        for (BaseObservation abstractValue : abstractValuesResult) {\n",
+            "base_contents": "    protected Set<Long> getObservationIds(Collection<AbstractValue> abstractValuesResult) {\n        Set<Long> ids = new HashSet<Long>();\n        for (AbstractValue abstractValue : abstractValuesResult) {\n",
+            "num_conflicts_in_file": 14,
+            "found_res_region": true,
+            "res_region": "    protected Set<Long> getObservationIds(Collection<? extends BaseObservation> abstractValuesResult) {\n        Set<Long> ids = new HashSet<>(abstractValuesResult.size());\n        for (BaseObservation abstractValue : abstractValuesResult) {\n",
+            "res_start_pos": 9716,
+            "res_end_pos": 9957,
+            "lookback": "     * @param abstractValuesResult\n     *            {@link AbstractValuedLegacyObservation}s to get ids from\n     * @return Set with ids\n     */\n",
+            "lookahead": "            ids.add(abstractValue.getObservationId());\n        }\n        return ids;\n    }\n\n    /**\n",
+            "label": "B",
+            "in_vocab_lines": true,
+            "in_vocab_words": true
+        },
+        {
+            "sizes": {
+                "lines": {
+                    "a": 2,
+                    "b": 21,
+                    "base": 2
+                },
+                "chars": {
+                    "a": 87,
+                    "b": 884,
+                    "base": 88
+                }
+            },
+            "a_contents": "     * Create phenomenon time from min and max {@link AbstractObservationTime}s\n     *\n",
+            "b_contents": "\n     * Create the phenomenon time from {@link AbstractValuedLegacyObservation}\n     *\n     * @param abstractValue\n     *            {@link AbstractValuedLegacyObservation} for get time from\n     * @return phenomenon time\n     */\n    protected Time createPhenomenonTime(TemporalReferencedObservation abstractValue) {\n        // create time element\n        final DateTime phenStartTime = new DateTime(abstractValue.getPhenomenonTimeStart(), DateTimeZone.UTC);\n        DateTime phenEndTime;\n        if (abstractValue.getPhenomenonTimeEnd() != null) {\n            phenEndTime = new DateTime(abstractValue.getPhenomenonTimeEnd(), DateTimeZone.UTC);\n        } else {\n            phenEndTime = phenStartTime;\n        }\n        return createTime(phenStartTime, phenEndTime);\n    }\n\n    /**\n     * Create phenomenon time from min and max {@link AbstractTemporalReferencedObservation}s\n     *\n",
+            "base_contents": "     * Create phenomenon time from min and max {@link AbstractObservationTime}s\n     * \n",
+            "num_conflicts_in_file": 14,
+            "found_res_region": true,
+            "res_region": "     * Create the phenomenon time from {@link AbstractValuedLegacyObservation}\n     *\n     * @param abstractValue\n     *            {@link AbstractValuedLegacyObservation} for get time from\n     * @return phenomenon time\n     */\n    protected Time createPhenomenonTime(TemporalReferencedObservation abstractValue) {\n        // create time element\n        final DateTime phenStartTime = new DateTime(abstractValue.getPhenomenonTimeStart(), DateTimeZone.UTC);\n        DateTime phenEndTime;\n        if (abstractValue.getPhenomenonTimeEnd() != null) {\n            phenEndTime = new DateTime(abstractValue.getPhenomenonTimeEnd(), DateTimeZone.UTC);\n        } else {\n            phenEndTime = phenStartTime;\n        }\n        return createTime(phenStartTime, phenEndTime);\n    }\n\n    /**\n     * Create phenomenon time from min and max {@link AbstractTemporalReferencedObservation}s\n     *\n",
+            "res_start_pos": 10057,
+            "res_end_pos": 10940,
+            "lookback": "            ids.add(abstractValue.getObservationId());\n        }\n        return ids;\n    }\n\n    /**\n",
+            "lookahead": "     * @param minTime\n     *            minimum {@link AbstractTemporalReferencedObservation}\n     * @param maxTime\n     *            maximum {@link AbstractTemporalReferencedObservation}\n     * @return phenomenon time\n     */\n    protected Time createPhenomenonTime(TemporalReferencedObservation minTime, TemporalReferencedObservation maxTime) {\n        // create time element\n\n        final DateTime phenStartTime = DateTimeHelper.makeDateTime(minTime.getPhenomenonTimeStart());\n        DateTime phenEndTime;\n        if (maxTime.getPhenomenonTimeEnd() != null) {\n            phenEndTime = DateTimeHelper.makeDateTime(minTime.getPhenomenonTimeEnd());\n        } else {\n            phenEndTime = phenStartTime;\n        }\n        return GmlHelper.createTime(phenStartTime, phenEndTime);\n    }\n\n    /**\n",
+            "label": "B",
+            "in_vocab_lines": true,
+            "in_vocab_words": true
+        },
+        {
+            "sizes": {
+                "lines": {
+                    "a": 2,
+                    "b": 2,
+                    "base": 2
+                },
+                "chars": {
+                    "a": 70,
+                    "b": 85,
+                    "base": 71
+                }
+            },
+            "a_contents": "     * Create result time from {@link AbstractObservationTime}\n     *\n",
+            "b_contents": "\n     * Create result time from {@link AbstractTemporalReferencedObservation}\n     *\n",
+            "base_contents": "     * Create result time from {@link AbstractObservationTime}\n     * \n",
+            "num_conflicts_in_file": 14,
+            "found_res_region": true,
+            "res_region": "     * Create result time from {@link AbstractTemporalReferencedObservation}\n     *\n",
+            "res_start_pos": 11740,
+            "res_end_pos": 11824,
+            "lookback": "     * @param minTime\n     *            minimum {@link AbstractTemporalReferencedObservation}\n     * @param maxTime\n     *            maximum {@link AbstractTemporalReferencedObservation}\n     * @return phenomenon time\n     */\n    protected Time createPhenomenonTime(TemporalReferencedObservation minTime, TemporalReferencedObservation maxTime) {\n        // create time element\n\n        final DateTime phenStartTime = DateTimeHelper.makeDateTime(minTime.getPhenomenonTimeStart());\n        DateTime phenEndTime;\n        if (maxTime.getPhenomenonTimeEnd() != null) {\n            phenEndTime = DateTimeHelper.makeDateTime(minTime.getPhenomenonTimeEnd());\n        } else {\n            phenEndTime = phenStartTime;\n        }\n        return GmlHelper.createTime(phenStartTime, phenEndTime);\n    }\n\n    /**\n",
+            "lookahead": "     * @param maxTime\n     *            {@link AbstractTemporalReferencedObservation} to create result time from\n     * @return result time\n     */\n    protected TimeInstant createResutlTime(TemporalReferencedObservation maxTime) {\n        DateTime dateTime = DateTimeHelper.makeDateTime(maxTime.getResultTime());\n        return new TimeInstant(dateTime);\n    }\n\n    /**\n",
+            "label": "B",
+            "in_vocab_lines": true,
+            "in_vocab_words": true
+        },
+        {
+            "sizes": {
+                "lines": {
+                    "a": 2,
+                    "b": 14,
+                    "base": 2
+                },
+                "chars": {
+                    "a": 82,
+                    "b": 439,
+                    "base": 83
+                }
+            },
+            "a_contents": "     * Create valid time from min and max {@link AbstractObservationTime}s\n     *\n",
+            "b_contents": "\n     * Create result time from {@link Date}\n     *\n     * @param date\n     *            {@link Date} to create result time from\n     * @return result time\n     */\n    protected TimeInstant createResutlTime(Date date) {\n        DateTime dateTime = new DateTime(date, DateTimeZone.UTC);\n        return new TimeInstant(dateTime);\n    }\n\n    /**\n     * Create valid time from min and max {@link AbstractTemporalReferencedObservation}s\n     *\n",
+            "base_contents": "     * Create valid time from min and max {@link AbstractObservationTime}s\n     * \n",
+            "num_conflicts_in_file": 14,
+            "found_res_region": true,
+            "res_region": "     * Create result time from {@link Date}\n     *\n     * @param date\n     *            {@link Date} to create result time from\n     * @return result time\n     */\n    protected TimeInstant createResutlTime(Date date) {\n        DateTime dateTime = new DateTime(date, DateTimeZone.UTC);\n        return new TimeInstant(dateTime);\n    }\n\n    /**\n     * Create valid time from min and max {@link AbstractTemporalReferencedObservation}s\n     *\n",
+            "res_start_pos": 12195,
+            "res_end_pos": 12633,
+            "lookback": "     * @param maxTime\n     *            {@link AbstractTemporalReferencedObservation} to create result time from\n     * @return result time\n     */\n    protected TimeInstant createResutlTime(TemporalReferencedObservation maxTime) {\n        DateTime dateTime = DateTimeHelper.makeDateTime(maxTime.getResultTime());\n        return new TimeInstant(dateTime);\n    }\n\n    /**\n",
+            "lookahead": "     * @param minTime\n     *            minimum {@link AbstractTemporalReferencedObservation}\n     * @param maxTime\n     *            maximum {@link AbstractTemporalReferencedObservation}\n     * @return valid time or null if valid time is not set in datasource\n     */\n    protected Time createValidTime(TemporalReferencedObservation minTime, TemporalReferencedObservation maxTime) {\n        // create time element\n        if (minTime.getValidTimeStart() != null && maxTime.getValidTimeEnd() != null) {\n            final DateTime startTime = DateTimeHelper.makeDateTime(minTime.getValidTimeStart());\n            DateTime endTime = DateTimeHelper.makeDateTime(minTime.getValidTimeEnd());\n            return GmlHelper.createTime(startTime, endTime);\n        }\n        return null;\n    }\n\n    /**\n     * Create {@link TimePeriod} from {@link Date}s\n     *\n     * @param start\n     *            Start {@link Date}\n     * @param end\n     *            End {@link Date}\n     * @return {@link TimePeriod} or null if {@link Date}s are null\n     */\n    protected TimePeriod createValidTime(Date start, Date end) {\n        // create time element\n        if (start != null && end != null) {\n            final DateTime startTime = new DateTime(start, DateTimeZone.UTC);\n            DateTime endTime = new DateTime(end, DateTimeZone.UTC);\n            return new TimePeriod(startTime, endTime);\n        }\n        return null;\n    }\n\n    /**\n     * Create {@link Time} from {@link DateTime}s\n     *\n     * @param start\n     *            Start {@link DateTime}\n     * @param end\n     *            End {@link DateTime}\n     * @return Resulting {@link Time}\n     */\n    protected Time createTime(DateTime start, DateTime end) {\n        if (start.equals(end)) {\n            return new TimeInstant(start);\n        } else {\n            return new TimePeriod(start, end);\n        }\n    }\n\n    /**\n     * Get internal {@link Value} from {@link AbstractValuedLegacyObservation}\n     *\n     * @param abstractValue\n     *            {@link AbstractValuedLegacyObservation} to get {@link Value} from\n     * @return {@link Value} or null if the concrete {@link AbstractValuedLegacyObservation} is\n     *         not supported\n     * @throws OwsExceptionReport\n     *             If an error occurs when creating\n     *             {@link org.n52.sos.ogc.om.values.SweDataArrayValue}\n     *             \n     * User {@link Observation#accept(org.n52.sos.ds.hibernate.entities.observation.ObservationVisitor)}\n     */\n    @Deprecated\n    protected Value<?> getValueFrom(ValuedObservation<?> abstractValue) throws OwsExceptionReport {\n        Value<?> value = abstractValue.accept(new ObservationValueCreator());\n//        if (value != null && abstractValue.isSetUnit()) {\n//            value.setUnit(abstractValue.getUnit().getUnit());\n//        }\n        return value;\n    }\n\n    protected NamedValue<?> createSpatialFilteringProfileParameter(Geometry samplingGeometry)\n            throws OwsExceptionReport {\n        final NamedValue<Geometry> namedValue = new NamedValue<>();\n        final ReferenceType referenceType = new ReferenceType(OmConstants.PARAM_NAME_SAMPLING_GEOMETRY);\n        namedValue.setName(referenceType);\n        // TODO add lat/long version\n        Geometry geometry = samplingGeometry;\n        namedValue.setValue(new org.n52.sos.ogc.om.values.GeometryValue(GeometryHandler.getInstance()\n                .switchCoordinateAxisFromToDatasourceIfNeeded(geometry)));\n        return namedValue;\n    }\n\n}<END\\>",
+            "label": "B",
+            "in_vocab_lines": true,
+            "in_vocab_words": true
+        }
+    ],
+    "metadata_corrupted": false
+}
